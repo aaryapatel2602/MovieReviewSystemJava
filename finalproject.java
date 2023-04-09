@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class finalproject {
+public class AARYA {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Map<String, Double> movieRatings = new HashMap<>();
@@ -93,27 +93,27 @@ public class finalproject {
         } else if (choice == 3) {
             System.out.println("Enter the name of the movie:");
             String movie = scanner.next();
-
+        
             if (movieReviews.containsKey(movie)) {
                 System.out.println("Enter your review:");
                 String review = scanner.next();
-
-                List<String> reviews = movieReviews.get(movie);
+        
+                List<String> reviews = new ArrayList<>(movieReviews.get(movie));
                 reviews.add(review);
                 movieReviews.put(movie, reviews);
-
+        
                 System.out.println("Enter your rating (out of 5):");
                 double rating = scanner.nextDouble();
-
+        
                 double currentRating = movieRatings.get(movie);
                 double newRating = (currentRating + rating) / 2;
                 movieRatings.put(movie, newRating);
-
+        
                 System.out.println("Review and rating added for " + movie);
-            } else {
-                System.out.println("Movie not found");
             }
-        } else if (choice == 4) {
+        }
+         
+         else if (choice == 4) {
             System.out.println("Exiting...");
             break;
         } else {
